@@ -22,9 +22,6 @@ public class BetterworksAcmeHomePage {
 
 	private By acmeHomePageHeaderText = By.xpath("//div[@class='sidebar-company-header']");
 	private By createPostButton = By.xpath("//button[@id='create-button']");
-//	private By askCeotext = By.xpath("//div[contains(text(),'Ask anything to your CEO at anytime')]");
-	private By newPostModalHeadertext = By
-			.xpath("//h3[contains(text()," + "'Create new post -Select type')][@class='modal-title']");
 	private By pollTypeOpenButton = By.xpath("//button[contains(text(),'OPEN')]");
 	private By pollTypeMultipleChoiceButton = By.xpath("//button[contains(text(),'MULTIPLE CHOICE')]");
 	private By radioButtonGroup = By.xpath("//div[@class='ant-radio-group']//label");
@@ -59,16 +56,8 @@ public class BetterworksAcmeHomePage {
 	}
 
 	public boolean selectRadioButtonGroup(String type) throws InterruptedException {
-
-//		waitUtil.waitForElementby(createPostButton);
-		System.out.println(" I am entering the Radio Button Group");
-
 		List<WebElement> radioButtonList = driver.findElements(radioButtonGroup);
-
-		System.out.println("In the Radio group Method + " + radioButtonList.size());
-
 		for (WebElement webElement : radioButtonList) {
-			System.out.println("webElement " + webElement.getText());
 			if (webElement.getText().equalsIgnoreCase(type)) {
 				if (!webElement.isSelected()) {
 					webElement.click();
@@ -105,7 +94,6 @@ public class BetterworksAcmeHomePage {
 	public void clickOnDropDown() throws InterruptedException {
 		waitUtil.waitForElementby(dropDownButton);
 		driver.findElement(dropDownButton).click();
-//		Thread.sleep(3000);
 	}
 
 	public void groupList(String groupListChosen) {
@@ -115,9 +103,7 @@ public class BetterworksAcmeHomePage {
 		} 
 		else{		
 			List<WebElement> groupList = driver.findElements(selectGroupList);
-			for (WebElement webElement : groupList) {
-				System.out.println("groupList : ***********  " + webElement.getText());
-				
+			for (WebElement webElement : groupList) {				
 				if (webElement.getText().equalsIgnoreCase(groupListChosen)) {
 					webElement.click();
 					break;
@@ -147,6 +133,5 @@ public class BetterworksAcmeHomePage {
 	
 	public void clickOnPublishPostButton() throws InterruptedException {
 		driver.findElement(publishPostButton).click();
-//		Thread.sleep(3000);
 	}
 }

@@ -24,13 +24,13 @@ public class BetterworksLogin_Stepdefinitions {
 
 	@Then("^I should see the email text box and verification code button$")
 	public void i_should_see_the_email_text_box_and_verification_code_button() {
-		Assert.assertTrue(betterworksLoginPage.isEmailAddressFieldPresent());
-		Assert.assertTrue(betterworksLoginPage.isVerificationCodeButtonPresent());
+		Assert.assertTrue("emailaddress text area is not present", betterworksLoginPage.isEmailAddressFieldPresent());
+		Assert.assertTrue("send me verification code btn is not present", betterworksLoginPage.isVerificationCodeButtonPresent());
 	}
 	
 	@Then("I should see the verification code Text box")
 	public void i_should_see_the_verification_code_text_box() {
-		betterworksLoginPage.isVerficationCodeButtonDisplayed();
+		Assert.assertTrue("Verfication code text area is not present",betterworksLoginPage.isVerficationCodeTextAreaDisplayed());
 	}
 	
 	@And("^I enter the work email address (.+)$")
@@ -54,6 +54,6 @@ public class BetterworksLogin_Stepdefinitions {
 	}
 	@Then("I am seeing the acme home page")
 	public void i_am_seeing_the_acme_home_page() {
-		Assert.assertTrue(betterworksAcmeHomePage.isacmeHomePageHeaderTextDisplayed());
+		Assert.assertTrue("After login , the home page is not visible",betterworksAcmeHomePage.isacmeHomePageHeaderTextDisplayed());
 	}
 }

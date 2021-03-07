@@ -19,10 +19,8 @@ public class BetterworksLoginPage {
 	
 	//locators for the Login page 	
 	private By emailAddresstextField = By.id("inputGroupField");
-	private By sendVerifCodeBtn = By.xpath("//*[@class='ladda-button btn btn-primary hyphenButton loginButton']/span[1]");
-	private By panelFooterMessage = By.xpath("//*[@class='rubix-panel-footer']/p");
-	
-	private By verificationCodeTextbox = By.xpath("//*[@id='inputGroupField'][@type='password']");
+	private By sendVerifCodeBtn = By.xpath("//span[contains(text(), 'Send me a verification code')]");
+	private By verificationCodeTextbox = By.xpath("//input[@id='inputGroupField'][@type='password']");
 	private By loginButton = By.xpath("//button[@class='hyphenButton btn btn-primary'][@type='submit']");
 	
 	
@@ -35,11 +33,7 @@ public class BetterworksLoginPage {
 		waitUtil.waitForElementby(sendVerifCodeBtn);
 		driver.findElement(sendVerifCodeBtn).click();
 	}
-	
-	public String getpanelFooterMessage() {
-		return driver.findElement(panelFooterMessage).getText().trim();
-	}
-	
+		
 	public boolean isEmailAddressFieldPresent() {
 		return driver.findElement(emailAddresstextField).isDisplayed();
 	}
@@ -60,9 +54,9 @@ public class BetterworksLoginPage {
 		return new BetterworksAcmeHomePage(driver);
 	}
 	
-	public boolean isVerficationCodeButtonDisplayed() {
-		waitUtil.waitForElementby(sendVerifCodeBtn);
-		return driver.findElement(sendVerifCodeBtn).isDisplayed();
+	public boolean isVerficationCodeTextAreaDisplayed() {
+		waitUtil.waitForElementby(verificationCodeTextbox);
+		return driver.findElement(verificationCodeTextbox).isDisplayed();
 	}
 	
 	public BetterworksAcmeHomePage loginToAcmeApp(String emailId , String passwd) {

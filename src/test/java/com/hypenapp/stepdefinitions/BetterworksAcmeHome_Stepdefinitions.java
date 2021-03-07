@@ -32,7 +32,7 @@ public class BetterworksAcmeHome_Stepdefinitions {
 
 	@Given("user is on the Acme Home page")
 	public void user_is_on_the_acme_home_page() {
-	    Assert.assertTrue(betterworksAcmeHomePage.isacmeHomePageHeaderTextDisplayed());
+		Assert.assertTrue("users is not the Acme home page after login", betterworksAcmeHomePage.isacmeHomePageHeaderTextDisplayed());
 	}
 	@Then("I should see the AcmeTest home page")
 	public void i_should_see_the_acme_test_home_page() {
@@ -40,7 +40,7 @@ public class BetterworksAcmeHome_Stepdefinitions {
 	}
 	@Then("I should see the create a new post Button")
 	public void i_should_see_the_create_a_new_post_button() {
-		Assert.assertTrue(betterworksAcmeHomePage.isCreatePostButtonPresent());
+		Assert.assertTrue("Create post Btn is not visible", betterworksAcmeHomePage.isCreatePostButtonPresent());
 	}
 	
 	@When("I click on create new Post Button")
@@ -50,13 +50,12 @@ public class BetterworksAcmeHome_Stepdefinitions {
 
 	@Then("I should see the create new post -Select type modal box")
 	public void i_should_see_the_create_new_post_select_type_modal_box() {
-		Assert.assertTrue(betterworksAcmeHomePage.isPollTypeOpenButtonPresent());
-		Assert.assertTrue(betterworksAcmeHomePage.isPollTypeMultipleChoiceButton());
+		Assert.assertTrue("Open Btn is not visible", betterworksAcmeHomePage.isPollTypeOpenButtonPresent());
+		Assert.assertTrue("Multiple choice Btn is not visible",betterworksAcmeHomePage.isPollTypeMultipleChoiceButton());
 	}
 	
 	@Then("I choose the radio button - Anonymous-Official-Named category {string}")
 	public void i_choose_the_radio_button_anonymous_official_named_category(String type) throws InterruptedException {
-//		betterworksAcmeHomePage.selectRadioButtonGroup(type);
 		Assert.assertTrue("Radio button not present",betterworksAcmeHomePage.selectRadioButtonGroup(type));
 	}
 	
@@ -77,28 +76,17 @@ public class BetterworksAcmeHome_Stepdefinitions {
 	}
 	@Then("I should see the Create new post -Write post modal box")
 	public void i_should_see_the_create_new_post_write_post_modal_box(){
-		betterworksAcmeHomePage.isPublishPostButtonDisplayed();
+		Assert.assertTrue("publish post Btn not present", betterworksAcmeHomePage.isPublishPostButtonDisplayed());
 		Assert.assertTrue(betterworksAcmeHomePage.getWritePostheaderText().contains("Create new post -Write post"));
-		System.out.println("Write Post header +++++ " + betterworksAcmeHomePage.getWritePostheaderText());
 	}
 	
 	@Then("I type the question-opinion-feedback on the post {string}")
 	public void i_type_the_question_opinion_feedback_on_the_post(String postInfo) {
 	    betterworksAcmeHomePage.writePost(postInfo);
 	}
-//	@Then("I upload an image or video")
-//	public void i_upload_an_image_or_video() {
-//	    // Write code here that turns the phrase above into concrete actions
-//	    throw new io.cucumber.java.PendingException();
-//	}
+	
 	@Then("I click on publish Post")
 	public void i_click_on_publish_post() throws InterruptedException {
 	    betterworksAcmeHomePage.clickOnPublishPostButton();
 	}
-//	@Then("I should see my published post in the Acme home page")
-//	public void i_should_see_my_published_post_in_the_acme_home_page() {
-//	    // Write code here that turns the phrase above into concrete actions
-//	    throw new io.cucumber.java.PendingException();
-//	}
-
 }

@@ -11,7 +11,7 @@ Background:
 # Arnaud , Forum (All Merged),Chat with Meagan,CEO Ask Me Anything,Pulse Survey - For Forum
 # Ask anything to your CEO at anytime,Any Suggestion,Ask CHRO Anything,Ask HR anything,}
 
-Scenario: verify the create a new post functionality
+Scenario: verify the create a new post functionality with Open type
 	Given user is on the Acme Home page
 	Then I should see the AcmeTest home page
 	And I should see the create a new post Button
@@ -23,6 +23,4 @@ Scenario: verify the create a new post functionality
 	And I click on select button 
 	Then I should see the Create new post -Write post modal box 
 	And I type the question-opinion-feedback on the post "This is for testing Purpose - Automation Script" 
-#	And I upload an image or video
 	And I click on publish Post 
-#	Then I should see my published post in the Acme home page
