@@ -1,25 +1,25 @@
 $(document).ready(function() {
 CucumberHTML.timelineItems.pushArray([
   {
-    "id": "0b389f7f-c095-49ae-a302-26dea8cf5255",
-    "feature": "To test the create post feature from the Acme Home Page",
-    "scenario": "verify the create a new post functionality with Open type",
-    "start": 1615154008473,
-    "group": 14,
-    "content": "",
-    "tags": "",
-    "end": 1615154040215,
-    "className": "passed"
-  },
-  {
-    "id": "6a0db23c-83fd-411c-ba15-ce3b7d413954",
+    "id": "d4da4f04-c884-4384-b151-bedc16b77c9f",
     "feature": "Testing the signin feature of the BetterWorks Engage application",
     "scenario": "Login to the Betterworks Engage application with valid credentials",
-    "start": 1615154008471,
+    "start": 1615157591485,
     "group": 15,
     "content": "",
     "tags": "",
-    "end": 1615154038541,
+    "end": 1615157619621,
+    "className": "passed"
+  },
+  {
+    "id": "298704f0-15da-409e-b114-130acfd4cac8",
+    "feature": "To test the create post feature from the Acme Home Page",
+    "scenario": "verify the create a new post functionality with Open type",
+    "start": 1615157591486,
+    "group": 14,
+    "content": "",
+    "tags": "",
+    "end": 1615157620476,
     "className": "passed"
   }
 ]);

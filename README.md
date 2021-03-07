@@ -1,7 +1,8 @@
 # cucumber-selenium-java
 ## BDD Automation Framework for Betterworks App 
 
-This Automation framework with BDD approach using Cucumber , Java , selenium , Junit and Extent Spark Reports
+This Automation framework with BDD approach using Cucumber ,Java ,selenium , Junit and Extent Spark Reports
+
 Design Pattern - Page Object Model + Singleton + SRP(single responsibility principle)
 
 # src/main/java
@@ -65,11 +66,19 @@ Design Pattern - Page Object Model + Singleton + SRP(single responsibility princ
 		Different dependencies and plugins for the project
 		
 10. Parallel Execution 
-		Plugin added in pom.xml 
+		Plugin added in pom.xml , Feature file parallel execution is achieved with junit
 
 11. Driver Factory
 		Initialise the Driver with Thread.local (java 8 feature)
 
 12. Config reader File 
 		Load the configuration files 
-		
+
+## Improvement /Enhancements to the Project
+
+1. Generic functions / Libraries can be built 
+2. Running testcases from Jenkins - Integration 
+3. Running testcases on Dockerized selenium Grid
+4. Testng for parallel exectution of scenarios
+5. Integration with AWS 
+6. Log4j for logging

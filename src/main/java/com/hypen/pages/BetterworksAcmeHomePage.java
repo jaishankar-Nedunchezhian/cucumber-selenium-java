@@ -33,7 +33,7 @@ public class BetterworksAcmeHomePage {
 	private By writePostHeaderInfo = By.xpath("//h3[contains(text(),'Create new post -Write post')][@class='modal-title']");
 	private By writePosttextArea = By.xpath("//textarea[@class='textArea form-control'][@id='textAreaField']");
 	private By publishPostButton = By.xpath("//button[@class='hyphenButton smallButton btn btn-default'][@type='submit']");
-	
+//	private By createPostButton = By.xpath("//button[@id='create-890']");
 	
 	public boolean isacmeHomePageHeaderTextDisplayed() {
 		waitUtil.waitForElementby(acmeHomePageHeaderText);
